@@ -1,0 +1,28 @@
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
+				       Version 0.1.0                         
+				        Mar 16 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Boot.java created
+
+	- Boot class to handle game window created
+		- Basic window created and looped on screen
+		- Simple diagonal line drawn on window
+
+	- Main class created 
+		- Currently runs Boot class
+		
+		
+- Workspace for project created
+	- Custom Libraries imported to project
+		- LWJGL (Lightweight Java game Library)
+		- Slick-Util Library 
+	
+	
+- Github repository created
+	- Version 0.1.0 committed
