@@ -6,12 +6,12 @@ Version 0.1.0
 
 package data;
 
-import org.lwjgl.LWJGLException;
+
 import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.DisplayMode;
 
 //* is a wildcard, so it imports everything
 import static org.lwjgl.opengl.GL11.*;
+import static helpers.Art.*;
 
 
 public class Boot {
@@ -20,36 +20,15 @@ public class Boot {
 	//Creating Boot Constructor
 	public Boot() {
 		
-		//Setting game window title/description
-		Display.setTitle("Java Tower Defense");
+		//Call BeginSession method from Art helper
+		BeginSession();
 		
-		/*
-		Try catch, more or less, means, "if something
-		goes wrong, don't blow up the computer, just stop
-		where it is, and print out what went wrong
-		*/
-		try {
-			//Setting dimensions for and creating screen
-			Display.setDisplayMode(new DisplayMode(600, 400));
-			Display.create();
-		} catch (LWJGLException e) { //If the window crashses
-			//Prints out the error if game fails to launch
-			e.printStackTrace();
-		}
 		
-		//The following section is used to initialize LWJGL
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		glMatrixMode(GL_MODELVIEW);
-		/*
-		 glOrtho is the "camera," or bounding box, of the screen
-		 So 0 is the top left, 600 is the top right, 400 the bottom
-		 left, etc... The last two numbers are for 3d graphics, but
-		 this is a 2d project so they are 1 and -1 because they won't 
-		 be used
-		 */
-		glOrtho(0, 600, 400, 0, 1, -1);
 		
+		float width = 50;
+		float height = 50;
+		float squarex = 100;
+		float squarey = 100;
 		
 		/*
 		Loop to keep the window open
@@ -63,6 +42,14 @@ public class Boot {
 			glVertex2f(10, 10); //2f means 2 floats, 2i means 2 integers
 			glVertex2f(100, 100);
 			glEnd(); //Finish drawing the line
+			
+			//Drawing a Square...Vertexes are defined going clockwise
+			glBegin(GL_QUADS);
+			glVertex2f(squarex, squarey);                  //Top right corner
+			glVertex2f(squarex + width, squarey);          //Top left
+			glVertex2f(squarex + width, squarey + height); //Bot right
+			glVertex2f(squarex, squarey + height);         //Bot left
+			glEnd();
 			
 			
 			//Everytime the loop finishes update the screen

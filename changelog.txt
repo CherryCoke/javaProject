@@ -2,6 +2,31 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
+				       Version 0.1.1                         
+				        Mar 18 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Edited Boot.java
+	- Getting more familiar with drawing methods
+		- Added rectangle to game screen
+		
+- helpers package created
+	- Used to hold "helper" classes/methods
+
+- Art.java created
+
+	- Used to hold "helper" methods for drawing to the screen
+	
+	- BeginSession class created
+		- Relocated all code related to starting the game
+			window from the Boot class to BeginSession
+	
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
 				       Version 0.1.0                         
 				        Mar 16 2015
 ___  ______  ______  ______  ______  ______  ______  ______
