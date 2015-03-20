@@ -2,9 +2,13 @@ package helpers;
 
 import static org.lwjgl.opengl.GL11.GL_MODELVIEW;
 import static org.lwjgl.opengl.GL11.GL_PROJECTION;
+import static org.lwjgl.opengl.GL11.GL_QUADS;
+import static org.lwjgl.opengl.GL11.glBegin;
+import static org.lwjgl.opengl.GL11.glEnd;
 import static org.lwjgl.opengl.GL11.glLoadIdentity;
 import static org.lwjgl.opengl.GL11.glMatrixMode;
 import static org.lwjgl.opengl.GL11.glOrtho;
+import static org.lwjgl.opengl.GL11.glVertex2f;
 
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
@@ -49,5 +53,47 @@ public class Art {
 		 */
 		glOrtho(0, 600, 400, 0, 1, -1);
 	}
+	
+	public static void DrawQuad(float x, float y, float width, float height){
+		//Draws a square/rectangle
+		glBegin(GL_QUADS);
+		glVertex2f(x, y);                  //Top right corner
+		glVertex2f(x + width, y);          //Top left
+		glVertex2f(x + width, y + height); //Bot right
+		glVertex2f(x, y + height);         //Bot left
+		glEnd();
+	}
+		
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

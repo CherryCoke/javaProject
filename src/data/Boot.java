@@ -10,7 +10,6 @@ package data;
 import org.lwjgl.opengl.Display;
 
 //* is a wildcard, so it imports everything
-import static org.lwjgl.opengl.GL11.*;
 import static helpers.Art.*;
 
 
@@ -23,34 +22,15 @@ public class Boot {
 		//Call BeginSession method from Art helper
 		BeginSession();
 		
-		
-		
-		float width = 50;
-		float height = 50;
-		float squarex = 100;
-		float squarey = 100;
-		
 		/*
 		Loop to keep the window open
 		Line below basically says: while close isn't being pressed
 		*/
-		while(!Display.isCloseRequested()){
+		while(!Display.isCloseRequested()){	
 			
-			//Drawing a line
-			glBegin(GL_LINES); //Begin creating the line
-			//Beginning followed by end vertexes for the line
-			glVertex2f(10, 10); //2f means 2 floats, 2i means 2 integers
-			glVertex2f(100, 100);
-			glEnd(); //Finish drawing the line
-			
-			//Drawing a Square...Vertexes are defined going clockwise
-			glBegin(GL_QUADS);
-			glVertex2f(squarex, squarey);                  //Top right corner
-			glVertex2f(squarex + width, squarey);          //Top left
-			glVertex2f(squarex + width, squarey + height); //Bot right
-			glVertex2f(squarex, squarey + height);         //Bot left
-			glEnd();
-			
+			//Draw a pair of squares on the screen
+			DrawQuad(50, 50, 100, 100);
+			DrawQuad(150, 150, 100, 100);
 			
 			//Everytime the loop finishes update the screen
 			Display.update();
