@@ -2,6 +2,38 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
+			Version 0.2.0                         
+			 Mar 20 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Tile.java created (Currently Unused)
+	- Basic outline/variables for each tile created
+	
+- Edited Art.java
+
+	- Screen dimensions changed to 1280x960
+		- Removed all magic numbers
+	
+	- Added glEnable() method to enable drawing Textures
+	
+	- DrawQuadTex method created
+
+	- LoadTexture method created
+	
+	- QuickLoad method created
+	
+- Edited Boot.java
+	
+	- Removed test squares from previous version
+	
+	- Drew two textured squares to game screen
+
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
 			Version 0.1.2                         
 			 Mar 20 2015
 ___  ______  ______  ______  ______  ______  ______  ______
@@ -15,7 +47,11 @@ ___  ______  ______  ______  ______  ______  ______  ______
 	- Drew two squares using DrawQuad method
 	
 - Edited Art.java
-	- Added DrawQuad method
+
+	- Created DrawQuad method
+	
+	- Created DrawQuadTex(ture) method
+	
 	
 - Version 0.1.2 pushed to Github
 	

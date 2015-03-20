@@ -9,6 +9,8 @@ package data;
 
 import org.lwjgl.opengl.Display;
 
+import org.newdawn.slick.opengl.Texture;
+
 //* is a wildcard, so it imports everything
 import static helpers.Art.*;
 
@@ -22,15 +24,21 @@ public class Boot {
 		//Call BeginSession method from Art helper
 		BeginSession();
 		
+		//Define two test textures
+		Texture t = QuickLoad("dirt64");
+		Texture t2 = QuickLoad("grass64");
+		
+		
 		/*
 		Loop to keep the window open
 		Line below basically says: while close isn't being pressed
 		*/
+		
 		while(!Display.isCloseRequested()){	
 			
-			//Draw a pair of squares on the screen
-			DrawQuad(50, 50, 100, 100);
-			DrawQuad(150, 150, 100, 100);
+			//Draws a couple of test squares with textures
+			DrawQuadTex(t, 0, 0, 64, 64);
+			DrawQuadTex(t2, 64, 0, 64, 64);
 			
 			//Everytime the loop finishes update the screen
 			Display.update();
