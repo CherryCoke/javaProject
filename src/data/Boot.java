@@ -9,8 +9,6 @@ package data;
 
 import org.lwjgl.opengl.Display;
 
-import org.newdawn.slick.opengl.Texture;
-
 //* is a wildcard, so it imports everything
 import static helpers.Art.*;
 
@@ -24,10 +22,9 @@ public class Boot {
 		//Call BeginSession method from Art helper
 		BeginSession();
 		
-		//Define two test textures
-		Texture t = QuickLoad("dirt64");
-		Texture t2 = QuickLoad("grass64");
-		
+		//Creating new tiles
+		Tile tile = new Tile(0, 0, 64, 64, TileType.Grass);
+		Tile tile2 = new Tile(64, 0, 64, 64, TileType.Dirt);
 		
 		/*
 		Loop to keep the window open
@@ -36,9 +33,12 @@ public class Boot {
 		
 		while(!Display.isCloseRequested()){	
 			
-			//Draws a couple of test squares with textures
-			DrawQuadTex(t, 0, 0, 64, 64);
-			DrawQuadTex(t2, 64, 0, 64, 64);
+			//Draw/render the tiles made above
+			DrawQuadTex(tile.getTexture(), tile.getX(), tile.getY(),
+						tile.getWidth(), tile.getHeight());
+			
+			DrawQuadTex(tile2.getTexture(), tile2.getX(), tile2.getY(),
+					tile2.getWidth(), tile2.getHeight());
 			
 			//Everytime the loop finishes update the screen
 			Display.update();

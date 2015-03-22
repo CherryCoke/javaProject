@@ -28,7 +28,7 @@ public class Art {
 	
 	/*final means these two ints cannot be changed
 	during runtime, nor can they be extended to */
-	public static final int WIDTH = 1280, HEIGHT = 960;
+	public static final int WIDTH = 1408, HEIGHT = 832;
 	
 	public static void BeginSession(){
 		//Class to Begin the session/start the game
