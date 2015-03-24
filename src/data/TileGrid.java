@@ -10,11 +10,11 @@ public class TileGrid {
 	
 	public TileGrid() {
 		//Setting grid dimensions
-		map = new Tile[20][15];
+		map = new Tile[22][13];
 		
 		//Filling the grid with tiles
 		for (int i = 0; i < map.length; i++){
-			for (int j = 0; j < map.length; j++){
+			for (int j = 0; j < map[i].length; j++){
 				map[i][j] = new Tile(i * 64, j * 64, 64, 64, TileType.Grass);
 			}
 		}
@@ -24,8 +24,9 @@ public class TileGrid {
 	public void Draw(){
 		//Drawing textures to each tile in the grid
 		for (int i= 0; i < map.length; i ++){
-			for (int j = 0; j < map.length; j++){
+			for (int j = 0; j < map[i].length; j++){
 				Tile t = map[i][j];
+
 				DrawQuadTex(t.getTexture(), t.getX(), t.getY(), t.getWidth(),
 						t.getHeight());
 			}
