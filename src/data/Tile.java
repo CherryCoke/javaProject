@@ -30,6 +30,10 @@ public class Tile {
 				
 	}
 	
+	public void Draw() {
+		DrawQuadTex(texture, x, y, width, height);
+	}
+	
 	/*
 	Creating abunch of "getters and setters," that is, methods
 	to get and set a each of the values (x, y, width, height, type),

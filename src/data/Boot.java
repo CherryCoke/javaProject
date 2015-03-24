@@ -22,9 +22,8 @@ public class Boot {
 		//Call BeginSession method from Art helper
 		BeginSession();
 		
-		//Creating new tiles
-		Tile tile = new Tile(0, 0, 64, 64, TileType.Grass);
-		Tile tile2 = new Tile(64, 0, 64, 64, TileType.Dirt);
+		//Creating a new tile grid called grid
+		TileGrid grid = new TileGrid();
 		
 		/*
 		Loop to keep the window open
@@ -33,12 +32,8 @@ public class Boot {
 		
 		while(!Display.isCloseRequested()){	
 			
-			//Draw/render the tiles made above
-			DrawQuadTex(tile.getTexture(), tile.getX(), tile.getY(),
-						tile.getWidth(), tile.getHeight());
-			
-			DrawQuadTex(tile2.getTexture(), tile2.getX(), tile2.getY(),
-					tile2.getWidth(), tile2.getHeight());
+			//Rendering tile grid
+			grid.Draw();
 			
 			//Everytime the loop finishes update the screen
 			Display.update();
