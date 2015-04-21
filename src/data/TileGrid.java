@@ -30,13 +30,33 @@ public class TileGrid {
 		map = new Tile[22][13];
 		for (int i = 0; i < map.length; i++){
 			for (int j = 0; j < map[i].length; j++){
-				if (newMap[j][i] == 0)
+				/*
+				  Because the newMap variable is always the one being changed, 
+				  a switch statement is being used rather than an if/else to 
+				  avoid extra/redundant code
+				 */
+				switch (newMap[j][i]){
+				case 0:
 					map[i][j] = new Tile(i * 64, j * 64, 64, 64, TileType.Grass);
-				else
+					break;
+				case 1:
 					map[i][j] = new Tile(i * 64, j * 64, 64, 64, TileType.Dirt);
+					break;
+				case 2:
+					map[i][j] = new Tile(i * 64, j * 64, 64, 64, TileType.Water);
+					break;
 					
+				}
 			}
 		}
+	}
+	
+	public void setTile(int xCoord, int yCoord, TileType type){
+		map[xCoord][yCoord] = new Tile(xCoord * 64, yCoord * 64, 64, 64, type);
+	}
+	
+	public Tile getTile(int xCoord, int yCoord){
+		return map[xCoord][yCoord];
 	}
 	
 	public void Draw(){
