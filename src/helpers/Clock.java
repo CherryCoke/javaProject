@@ -4,13 +4,12 @@ import org.lwjgl.Sys;
 
 public class Clock {
 	
-	//Not currently functional, but will likely be used
 	private static boolean paused = false;
 	
 	//Long because the integer will be huge
 	public static long  lastFrame, totalTime;
 	
-	//d stands for delta time, multiplier not yet used
+	//d stands for delta time; multiplier is for speed/movement
 	public static float d = 0, multiplier = 1;
 	
 	public static long getTime() {
@@ -57,4 +56,21 @@ public class Clock {
 		totalTime += d;
 	}
 	
+	//Used to change multiplier from other classes
+	public static void ChangeMultiplier(int change){
+		// || stands for NOT
+		if (multiplier + change < -1 || multiplier + change > 7){
+			
+		} else {
+			multiplier += change;
+		}
+	}
+	
+	//Allows game to be (un)paused from other classes
+	public static void Pause(){
+		if (paused)
+			paused = false;
+		else
+			paused = true;
+	}
 }
