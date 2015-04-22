@@ -49,6 +49,10 @@ public class Boot {
 		//Using getTile to draw a tile on the map
 		grid.setTile(2, 1, grid.getTile(1,  1).getType());
 		
+		//Drawing a basic, static, enemy
+		Enemy e = new  Enemy(QuickLoad("Meep"), grid.getTile(0, 0), 64, 64, 2);
+		
+		
 		/*
 		Loop to keep the window open
 		Line below basically says: while close isn't being pressed
@@ -58,6 +62,7 @@ public class Boot {
 			
 			//Rendering tile grid
 			grid.Draw();
+			e.Draw();
 			
 			//Everytime the loop finishes update the screen
 			Display.update();
