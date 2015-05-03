@@ -3,6 +3,28 @@ ___  ______  ______  ______  ______  ______  ______  ______
 (______)(______)(______)(______)(______)(______)(______)
 				
 			Version 0.3.1                       
+			 May 02 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Wave.java created (manages spawns of enemy waves)
+	- Wave, Spawn, and Update methods created
+
+- Enemy.java edited
+	- Generated Getters and Setters for each class method
+	- Resolved error with getStartTile method
+	
+- Boot.java edited
+	- Created new Wave
+		- Removed old method of drawing enemies
+		
+- Version 0.3.1 committed to Github
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
+			Version 0.3.1                       
 			 Apr 21 2015
 ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
@@ -21,6 +43,8 @@ ___  ______  ______  ______  ______  ______  ______  ______
 		movement
 		
 	- Edited level/which tiles are being drawn
+	
+- Version 0.3.1 committed to Github
 ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)

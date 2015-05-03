@@ -49,7 +49,9 @@ public class Boot {
 		//Drawing a basic, static, enemy
 		Enemy e = new  Enemy(QuickLoad("Meep"), grid.getTile(0, 0), 64, 64, 10);
 		
-		
+		//Creating a new, infinite, wave
+		Wave wave = new Wave(10, e);
+	
 		/*
 		Loop to keep the window open
 		Line below basically says: while close isn't being pressed
@@ -58,11 +60,12 @@ public class Boot {
 		while(!Display.isCloseRequested()){	
 			//Updates happen BEFORE characters are drawn
 			Clock.update();
-			e.Update();
 			
 			//Rendering tile grid
 			grid.Draw();
-			e.Draw();
+			
+			//Update waves/enemies
+			wave.Update();
 			
 			//Everytime the loop finishes update the screen
 			Display.update();
