@@ -1,6 +1,6 @@
 package data;
 
-import static helpers.Art.*;
+//import static helpers.Art.*;
 
 public class TileGrid {
 	

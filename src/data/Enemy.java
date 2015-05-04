@@ -6,11 +6,12 @@ import org.newdawn.slick.opengl.Texture;
 
 import static helpers.Art.*;
 import static helpers.Clock.*;
-import static data.Checkpoint.*;
+//import static data.Checkpoint.*;
 
 public class Enemy {
 	
-	public int width, height, health;
+	//Declaring class variables
+	public int width, height, health, currentCheckpoint;
 	public float speed, x, y;
 	private Texture texture;
 	private Tile startTile;
@@ -23,7 +24,8 @@ public class Enemy {
 	private ArrayList<Checkpoint> checkpoints; //Array of checkpoints
 	private int[] directions; //Integer array of directions 
 	
-	public Enemy(Texture texture, Tile startTile, TileGrid grid, int width, int height, float speed){
+	public Enemy(Texture texture, Tile startTile, TileGrid grid, int width,
+			int height, float speed){
 		
 		//Initializing class variables
 		this.texture = texture;
@@ -41,7 +43,9 @@ public class Enemy {
 		//0 and 1 are X and Y directions respectively
 		this.directions[0] = 0;
 		this.directions[1] = 1;
-		directions = findNextDirection(startTile);
+		directions = FindNextDirection(startTile);
+		this.currentCheckpoint = 0; //Initial checkpoint will be zero
+		AddCheckpointList();
 	}
 	
 	public void Update(){
@@ -49,8 +53,59 @@ public class Enemy {
 			//If first, do nothing and set first to false (so it doesn't loop)
 			first = false;
 		else{
-			x += Delta() * directions[0];
-			y += Delta() * directions[1];
+			if (CheckpointReached()){
+				currentCheckpoint++;
+			} else {
+				x += Delta() * checkpoints.get(currentCheckpoint)
+						.getxDirection() * speed;
+				y += Delta() * checkpoints.get(currentCheckpoint)
+						.getyDirection() * speed;
+				}
+			}
+		}
+
+	
+	private boolean CheckpointReached(){
+		boolean reached = false; //By default they've not reached the end
+		
+		Tile t = checkpoints.get(currentCheckpoint).getTile();
+		//Check to see if enemies current position is within +- 3 pixels of checkpoint
+		if (x > t.getX() - 3 && 
+				x < t.getX() + 3 &&
+				y > t.getY() - 3 &&
+				y < t.getY() + 3){
+			//Set checkpoint reached as true
+			reached = true;
+			//Then set X/Y to match the checkpoint perfectly 
+			x = t.getX();
+			y = t.getY();
+		}
+		return reached;
+	}
+	
+	private void AddCheckpointList(){
+		//Have to manually code in the first checkpoint (special case)
+		checkpoints.add(FindNextCheckpoint(startTile, directions = 
+				FindNextDirection(startTile)));
+		
+		//But for every other checkpoint
+		int counter = 0;
+		boolean cont = true; //cont(inue)
+		
+		while (cont){
+			int[] currentDirection = FindNextDirection(checkpoints.get(counter)
+					.getTile());
+			//If no currentDirection exists, or there are more than 20 (arbitrary) then:
+			if (currentDirection[0] == 2 || counter == 20){ //If no other direction is found
+				cont = false; //Set continue to false
+			} else { //Unless there is a next direction
+				checkpoints.add(FindNextCheckpoint(checkpoints.get(counter)
+						.getTile(), directions = FindNextDirection(checkpoints
+						.get(counter).getTile())));
+				
+			}
+			
+			counter++;
 		}
 		
 	}
@@ -70,16 +125,16 @@ public class Enemy {
 		while (!found){
 			/*
 			 From the tile the enemy is currently standing on, he will keep moving
-			 until he comes across a tile that doesn't match the one he's currently on,
-			 or in other words a corner/checkpoint.
+			 until he comes across a tile that doesn't match the one he's 
+			 currently on, or in other words a corner/checkpoint.
 			 
-			 From this checkpoint, he needs to find which of the directions is valid (that
-			 isn't the one he just came from)
+			 From this checkpoint, he needs to find which of the directions is valid 
+			 (that isn't the one he just came from)
 			 */
 			if (start.getType() != grid.getTile(start.getXPlace() + dir[0] * counter, 
 					start.getYPlace() + dir[1] * counter).getType()){
 				found = true; //once a tile is found
-				//counter needs to be subtracted so that the checkpoint is in the correct spot
+				//Subtract one so the correct checkpoint is made
 				counter -= 1;
 				next = grid.getTile(start.getXPlace() + dir[0] * counter, 
 						start.getYPlace() + dir[1] * counter);
@@ -92,7 +147,7 @@ public class Enemy {
 		return c; //Return checkpoint
 		
 	}
-	private int[] findNextDirection(Tile start){
+	private int[] FindNextDirection(Tile start){
 		/*
 		 Method grabs current (start) tile, and returns an array of integers of
 		 the surrounding tiles/next possible directions
@@ -115,19 +170,26 @@ public class Enemy {
 		 (up/down/right/left) a friendly/walkable tile is from him
 		 */
 		
-		if (start.getType() == up.getType()){
+		if (start.getType() == up.getType() && directions[1] != 1){
 			dir[0] = 0;
 			dir[1] = -1;
-		} else if (start.getType() == down.getType()){
-			dir[0] = 0;
-			dir[1] = 1;
-		} else if (start.getType() == right.getType()){
+		} else if (start.getType() == right.getType() && directions[0] != -1){
 			dir[0] = 1;
 			dir[1] = 0;
-		} else if (start.getType() == left.getType()){
+		} else if (start.getType() == down.getType() && directions[1] != -1){
+			dir[0] = 0;
+			dir[1] = 1;
+		} else if (start.getType() == left.getType() && directions[0] != 1){
 			dir[0] = -1;
 			dir[1] = 0;
 		} else {
+			/*
+			 Set both directions to 2 so that the computer knows that
+			 no valid direction was found
+			 */
+			dir[0] = 2;
+			dir[1] = 2;
+			
 			//Report if there are no walkable directions (for debugging)
 			System.out.println("No Walkable Direction"); 
 		}

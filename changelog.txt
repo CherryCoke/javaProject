@@ -2,8 +2,39 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
-			Version 0.4.0                       
+			Version 0.4.2                       
 			 May 04 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Edited Enemy.java
+
+	- AddCheckpoint method created
+	
+	- CheckpointReached method created
+	
+	- Edited update method
+	
+	- FindNextDirection method edited
+		- Fixed some broken values
+	
+- Fixed enemies not recognizing what tile they're on
+
+- Fixed enemies not "turning" left
+
+- Fixed enemy path finding at corners
+
+- Changed an "x" to a "y" to fix most path finding errors
+	- ^ How annoying
+	
+- Version 0.4.2 Committed to Github
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
+			Version 0.4.1                       
+			 May 03 2015
 ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
@@ -13,9 +44,9 @@ ___  ______  ______  ______  ______  ______  ______  ______
 	- First step/phase of basic AI implemented
 		- PathContinues method created to check for 
 			surrounding tiles that are valid to move across
-		- findNextDirection method created to replace
+		- FindNextDirection method created to replace
 			PathContinues; serves same purpose
-		- findNextCheckpoint method created to assist in 
+		- FindNextCheckpoint method created to assist in 
 			the enemie's decision making
 		- Fixed error related to finding the tileGrid
 		
