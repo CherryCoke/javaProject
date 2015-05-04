@@ -2,7 +2,31 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
-			Version 0.3.1                       
+			Version 0.3.3                       
+			 May 03 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Player.java created
+
+	- Player and SetTile methods created to edit tiles from
+		within the game
+		
+	- Update method created to switch tiles and keep track
+		of user input
+		
+- Boot.java edited
+	- Created and set Player to update
+		- Allows for basic level editing from within the
+			game itself--no way to save maps yet
+			
+- Version 0.3.3 committed to Github
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
+			Version 0.3.2                       
 			 May 02 2015
 ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
@@ -19,7 +43,7 @@ ___  ______  ______  ______  ______  ______  ______  ______
 	- Created new Wave
 		- Removed old method of drawing enemies
 		
-- Version 0.3.1 committed to Github
+- Version 0.3.2 committed to Github
 ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)

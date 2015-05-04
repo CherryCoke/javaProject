@@ -51,6 +51,9 @@ public class Boot {
 		
 		//Creating a new, infinite, wave
 		Wave wave = new Wave(10, e);
+		
+		//Creating player
+		Player player = new Player(grid);
 	
 		/*
 		Loop to keep the window open
@@ -66,6 +69,9 @@ public class Boot {
 			
 			//Update waves/enemies
 			wave.Update();
+			
+			//Updating player actions
+			player.Update();
 			
 			//Everytime the loop finishes update the screen
 			Display.update();
