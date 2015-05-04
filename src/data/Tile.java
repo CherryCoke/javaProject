@@ -47,6 +47,14 @@ public class Tile {
 	public void setX(float x) {
 		this.x = x;
 	}
+	
+	public int getXPlace(){
+		return (int) x / 64;
+	}
+	
+	public int getYPlace(){
+		return (int) y / 64;
+	}
 
 	public float getY() {
 		return y;

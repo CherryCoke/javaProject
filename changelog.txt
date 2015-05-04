@@ -2,6 +2,46 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
+			Version 0.4.0                       
+			 May 04 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Edited Enemy.java
+
+	- First step/phase of basic AI implemented
+		- PathContinues method created to check for 
+			surrounding tiles that are valid to move across
+		- findNextDirection method created to replace
+			PathContinues; serves same purpose
+		- findNextCheckpoint method created to assist in 
+			the enemie's decision making
+		- Fixed error related to finding the tileGrid
+		
+	- Enemies still not completely intelligent yet, but are
+		able to make one decision/choice
+		
+	
+- Edited Wave.java
+	- Fixed error related to finding the tileGrid
+
+- Checkpoint.java created
+	- Checkpoint class created to hold variables
+		- Getter and Setter methods created
+		
+- Edited Tile.java
+	- GetXPlace and GetYPlace methods created to translate
+		current X/Y position from pixels to tiles/64 pixels
+		
+- Edited TileGrid.java
+	- Updated Draw() method to be more friendly
+	
+- Version 0.4.1 committed to Github
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
 			Version 0.3.3                       
 			 May 03 2015
 ___  ______  ______  ______  ______  ______  ______  ______

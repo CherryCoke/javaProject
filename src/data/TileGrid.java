@@ -63,10 +63,7 @@ public class TileGrid {
 		//Drawing textures to each tile in the grid
 		for (int i= 0; i < map.length; i ++){
 			for (int j = 0; j < map[i].length; j++){
-				Tile t = map[i][j];
-
-				DrawQuadTex(t.getTexture(), t.getX(), t.getY(), t.getWidth(),
-						t.getHeight());
+				map[i][j].Draw();
 			}
 		}
 	}
