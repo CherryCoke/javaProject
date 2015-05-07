@@ -6,11 +6,12 @@ public class TileGrid {
 	
 	//Creating a double array called map
 	public Tile[][] map;
-	
+	//To keep track of how many tiles there are in the map
+	private int tilesWide, tilesHigh;
 	
 	public TileGrid() {
 		//Setting grid dimensions
-		map = new Tile[22][13];
+		map = new Tile[tilesWide][tilesHigh];
 		
 		//Filling the grid with tiles
 		for (int i = 0; i < map.length; i++){
@@ -28,6 +29,11 @@ public class TileGrid {
 	 */
 	public TileGrid(int[][] newMap){
 		map = new Tile[22][13];
+		
+		//Defining the number of tiles long/high the map is
+		this.tilesHigh = newMap.length;
+		this.tilesWide = newMap[0].length;
+		
 		for (int i = 0; i < map.length; i++){
 			for (int j = 0; j < map[i].length; j++){
 				/*
@@ -56,7 +62,14 @@ public class TileGrid {
 	}
 	
 	public Tile getTile(int xCoord, int yCoord){
-		return map[xCoord][yCoord];
+		
+		if (xCoord < tilesWide && yCoord < tilesHigh && xCoord > -1  &&
+					yCoord > -1)
+			//If the tile is valid, just return that tile
+			return map[xCoord][yCoord];
+		else 
+			//Return a "throw away"/non existent tile to say you've hit the border
+			return new Tile(0, 0, 0, 0, TileType.NULL);
 	}
 	
 	public void Draw(){
@@ -67,4 +80,30 @@ public class TileGrid {
 			}
 		}
 	}
+
+	public Tile[][] getMap() {
+		return map;
+	}
+
+	public void setMap(Tile[][] map) {
+		this.map = map;
+	}
+
+	public int getTilesWide() {
+		return tilesWide;
+	}
+
+	public void setTilesWide(int tilesWide) {
+		this.tilesWide = tilesWide;
+	}
+
+	public int getTilesHigh() {
+		return tilesHigh;
+	}
+
+	public void setTilesHigh(int tilesHigh) {
+		this.tilesHigh = tilesHigh;
+	}
+	
+	
 }

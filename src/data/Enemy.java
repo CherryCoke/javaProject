@@ -54,7 +54,10 @@ public class Enemy {
 			first = false;
 		else{
 			if (CheckpointReached()){
-				currentCheckpoint++;
+				if (currentCheckpoint + 1 == checkpoints.size())
+					System.out.println("Enemy Reached End of Maze");
+				else
+					currentCheckpoint++;
 			} else {
 				x += Delta() * checkpoints.get(currentCheckpoint)
 						.getxDirection() * speed;
@@ -123,6 +126,7 @@ public class Enemy {
 		
 		//While a next tile to move to isn't selected yet
 		while (!found){
+			
 			/*
 			 From the tile the enemy is currently standing on, he will keep moving
 			 until he comes across a tile that doesn't match the one he's 
@@ -131,8 +135,10 @@ public class Enemy {
 			 From this checkpoint, he needs to find which of the directions is valid 
 			 (that isn't the one he just came from)
 			 */
-			if (start.getType() != grid.getTile(start.getXPlace() + dir[0] * counter, 
-					start.getYPlace() + dir[1] * counter).getType()){
+			if (start.getXPlace() + dir[0] * counter == grid.getTilesHigh() ||
+				start.getYPlace() + dir[1] * counter == grid.getTilesWide() ||
+				start.getType() != grid.getTile(start.getXPlace() + dir[0] * counter, 
+				start.getYPlace() + dir[1] * counter).getType()){
 				found = true; //once a tile is found
 				//Subtract one so the correct checkpoint is made
 				counter -= 1;
@@ -189,9 +195,6 @@ public class Enemy {
 			 */
 			dir[0] = 2;
 			dir[1] = 2;
-			
-			//Report if there are no walkable directions (for debugging)
-			System.out.println("No Walkable Direction"); 
 		}
 		
 		

@@ -2,6 +2,42 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
+			Version 0.4.3                      
+			 May 06 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+
+- Edited TileType.java
+	- Created new NULL tile to mark map edges/borders
+	
+- Edited TileGrid.java
+	- Added support for recognizing/behaving around NULL
+		type tiles
+	- Removed some magic numbers
+		
+- Edited Enemy.java
+	- Updated path finding
+	- Removed redundant debugging code
+	
+- Fixed enemies not being able to spawn/walk around world
+	edges/borders
+
+- Fixed issue with enemies "forgetting" their path
+
+- Fixed CTD error that would occasionally occur
+	
+- Version 0.4.3 committed to Github
+
+- Undocumented changes from previous 0.4.2 commit
+	- Edited Enemy.java 
+		- Update method edited to improve AI pathing
+
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
 			Version 0.4.2                       
 			 May 04 2015
 ___  ______  ______  ______  ______  ______  ______  ______

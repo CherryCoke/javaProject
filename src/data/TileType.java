@@ -9,7 +9,8 @@ public enum TileType {
 	values are a texture followed by a boolean value for 
 	if towers can be built upon them
 	*/
-	Grass("grass64", true), Dirt("dirt64", false), Water("water64", false);
+	Grass("grass64", true), Dirt("dirt64", false), Water("water64", false),
+	NULL("water64", false); //NULL only used to recongize borders
 	
 	String textureName;
 	boolean buildable;
