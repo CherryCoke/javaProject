@@ -2,6 +2,31 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
+			Version 0.4.4                      
+			 May 08 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Edited Clock.java
+	- Edited GetDelta method to resolve enemies "skipping"
+		ahead while moving/pathing
+
+- Edited Enemy.java
+	- Enemies now disappear upon reaching the end of their
+		path/the level
+		
+- Edited Wave.java
+	- Changed Update method to recognize when an enemy
+		is dead and/or reaches the end of the maze
+		
+- Fixed issue with how delta time was calculated
+
+- Version 0.4.4 comitted to Github
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
 			Version 0.4.3                      
 			 May 06 2015
 ___  ______  ______  ______  ______  ______  ______  ______

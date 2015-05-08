@@ -47,10 +47,10 @@ public class Boot {
 		TileGrid grid = new TileGrid(map);
 		
 		//Drawing a basic enemy
-		Enemy e = new  Enemy(QuickLoad("Meep"), grid.getTile(5, 5), grid, 64, 64, 3);
+		Enemy e = new  Enemy(QuickLoad("Meep"), grid.getTile(4, 5), grid, 64, 64, 6);
 		
 		//Creating a new, infinite, wave
-		Wave wave = new Wave(100, e);
+		Wave wave = new Wave(10, e);
 		
 		//Creating player
 		Player player = new Player(grid);

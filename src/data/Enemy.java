@@ -19,6 +19,7 @@ public class Enemy {
 	
 	//temporary movement fix
 	private boolean first = true;
+	private boolean alive = true;
 	
 	//Variables related to AI/enemy pathing
 	private ArrayList<Checkpoint> checkpoints; //Array of checkpoints
@@ -55,7 +56,7 @@ public class Enemy {
 		else{
 			if (CheckpointReached()){
 				if (currentCheckpoint + 1 == checkpoints.size())
-					System.out.println("Enemy Reached End of Maze");
+					Death(); //Remove enemies from the map/kill them
 				else
 					currentCheckpoint++;
 			} else {
@@ -202,11 +203,15 @@ public class Enemy {
 		return dir;
 	}
 	
+	private void Death(){
+		alive = false;
+	}
+	
+	//Getters and setters to retrieve private values above
 	public void Draw(){
 		DrawQuadTex(texture, x, y, width, height);
 	}
 	
-	//Getters and Setters for each of the above methods
 	public int getWidth() {
 		return width;
 	}
@@ -283,6 +288,8 @@ public class Enemy {
 		return grid;
 	}
 	
-	
+	public boolean isAlive(){
+		return alive;
+	}
 
 }

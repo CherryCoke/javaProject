@@ -29,7 +29,15 @@ public class Clock {
 		
 		//(int) makes sure the result will be an integer
 		int delta = (int)(currentTime - lastFrame);
-		lastFrame = getTime(); //reset lastFrame to right now
+		lastFrame = getTime(); 
+		
+		//Uncomment line below to see delta time
+		//System.out.println(delta * 0.01f);
+		
+		//If delay is higher than 0.5, just 'freeze' everything at 0.5
+		if (delta * 0.01f > 0.5f)
+			return 0.5f;
+		
 		return delta * 0.01f; //return delta time
 	}
 	
