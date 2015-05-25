@@ -15,7 +15,6 @@ import org.lwjgl.opengl.Display;
 //* is a wildcard, so it imports everything
 import static helpers.Art.*;
 
-
 public class Boot {
 	//Class handles the creates, defines, and runs the game window
 	
@@ -54,6 +53,8 @@ public class Boot {
 		
 		//Creating player
 		Player player = new Player(grid);
+		
+		Tower tower = new Tower(QuickLoad("tower_base"), grid.getTile(14, 7), 10);
 	
 		/*
 		Loop to keep the window open
@@ -72,6 +73,9 @@ public class Boot {
 			
 			//Updating player actions
 			player.Update();
+			
+			//Draw and update tower
+			tower.draw();
 			
 			//Everytime the loop finishes update the screen
 			Display.update();
