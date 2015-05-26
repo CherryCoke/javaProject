@@ -12,6 +12,7 @@ import static org.lwjgl.opengl.GL11.glOrtho;
 import static org.lwjgl.opengl.GL11.glVertex2f;
 import static org.lwjgl.opengl.GL11.glEnable;
 import static org.lwjgl.opengl.GL11.glTranslatef;
+import static org.lwjgl.opengl.GL11.glRotatef;
 import static org.lwjgl.opengl.GL11.glTexCoord2f;
 import static org.lwjgl.opengl.GL11.glBlendFunc;
 import static org.lwjgl.opengl.GL11.GL_BLEND;
@@ -97,6 +98,31 @@ public class Art {
 		glTranslate takes a x, y, and z dimension, but the game is 2d so the z is 0 
 		 */
 		glTranslatef(x, y, 0);
+		glBegin(GL_QUADS);
+		glTexCoord2f(0, 0); //TexCoord is Texture coordinate, the top right is 0,0 
+		glVertex2f(0, 0);  
+		glTexCoord2f(1, 0);
+		glVertex2f(width, 0);
+		glTexCoord2f(1, 1);
+		glVertex2f(width, height);
+		glTexCoord2f(0, 1);
+		glVertex2f(0, height);
+		
+		glEnd();
+		glLoadIdentity(); //Prevents screen tearing
+		
+	}
+	
+	//Rot for Rotate
+	public static void DrawQuadTexRot(Texture tex, float x, float y, float width,
+			   float height, float angle){
+		//Class for rotating textures 
+		//Bind texture to Opengl/the screen
+		tex.bind();
+		
+		glTranslatef(x + width / 2, y + height / 2, 0);
+		glRotatef(angle, 0, 0, 1); //f because it takes a float
+		glTranslatef(- width / 2, - height / 2, 0);
 		glBegin(GL_QUADS);
 		glTexCoord2f(0, 0); //TexCoord is Texture coordinate, the top right is 0,0 
 		glVertex2f(0, 0);  

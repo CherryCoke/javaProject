@@ -42,20 +42,9 @@ public class Boot {
 				
 		};
 		
-		//Creating a new tile grid called grid
-		TileGrid grid = new TileGrid(map);
+		//Initialize the game class
+		Game game = new Game(map);
 		
-		//Drawing a basic enemy
-		Enemy e = new  Enemy(QuickLoad("Meep"), grid.getTile(4, 5), grid, 64, 64, 6);
-		
-		//Creating a new, infinite, wave
-		Wave wave = new Wave(10, e);
-		
-		//Creating player
-		Player player = new Player(grid);
-		
-		Tower tower = new Tower(QuickLoad("tower_base"), grid.getTile(14, 7), 10);
-	
 		/*
 		Loop to keep the window open
 		Line below basically says: while close isn't being pressed
@@ -65,17 +54,8 @@ public class Boot {
 			//Updates happen BEFORE characters are drawn
 			Clock.update();
 			
-			//Rendering tile grid
-			grid.Draw();
-			
-			//Update waves/enemies
-			wave.Update();
-			
-			//Updating player actions
-			player.Update();
-			
-			//Draw and update tower
-			tower.draw();
+			//update the game
+			game.update();
 			
 			//Everytime the loop finishes update the screen
 			Display.update();

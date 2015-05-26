@@ -35,10 +35,10 @@ public class Clock {
 		//System.out.println(delta * 0.01f);
 		
 		//If delay is higher than 0.5, just 'freeze' everything at 0.5
-		if (delta * 0.01f > 0.5f)
-			return 0.5f;
+		if (delta * 0.001f > 0.05f)
+			return 0.05f;
 		
-		return delta * 0.01f; //return delta time
+		return delta * 0.001f; //return delta time
 	}
 	
 	public static float Delta(){

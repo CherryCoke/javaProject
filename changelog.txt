@@ -2,6 +2,50 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
+			Version 0.5.1                    
+			 May 26 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Game.java created
+	- Handles all code related to starting the game and 
+		updating everything once it has started
+	- Created to better transfer/retrieve data from other
+		classes
+
+- WaveManager.java created
+	- Handles/Initiates all code related to the spawning of 
+		waves/enemies in waves
+
+- Bullet.java created
+	- Update/Draw method created
+
+- Edited Wave.java
+	- Added support for multiple waves
+	
+- Edited tower.java
+	- Created Shoot method 
+	- Edited Update/Draw method to work with Shoot
+
+- Edited Art.java
+	- Added framework so towers can rotate/track enemies
+	
+- Edited Boot.java
+	- Removed the creation and updating of all game
+		elements (now done by Game.java)
+		
+- Edited Clock.java
+	- Game was running 10x faster than expected...fixed
+		
+- Edited all texture related code so that everything is 
+	being drawn using the same method/DrawQuadTex
+
+- Version 0.5.1 committed to Github
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
 			Version 0.5.0                    
 			 May 19 2015
 ___  ______  ______  ______  ______  ______  ______  ______
