@@ -34,12 +34,6 @@ public class Player {
 		this.leftMouseButtonDown = false;
 	}
 	
-	public void SetTile(){
-		//Math.floor rounds down to the nearest whole number
-		grid.setTile((int)Math.floor(Mouse.getX()/ 64), 
-			(int)Math.floor((HEIGHT - Mouse.getY() - 1)/ 64), types[index]);
-	}
-	
 	
 	public void Update(){
 		
@@ -76,13 +70,6 @@ public class Player {
 					Keyboard.getEventKeyState()){
 				Clock.ChangeMultiplier(-0.2f);
 			}
-		}
-	}
-	
-	public void ChangeIndex(){
-		index++;
-		if(index > types.length -1 ){
-			index = 0;
 		}
 	}
 }

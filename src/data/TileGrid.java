@@ -10,8 +10,10 @@ public class TileGrid {
 	private int tilesWide, tilesHigh;
 	
 	public TileGrid() {
-		//Setting grid dimensions
-		map = new Tile[tilesWide][tilesHigh];
+		this.tilesWide = 22;
+		this.tilesHigh = 13;
+		//	Setting grid dimensions
+		map = new Tile[22][13];
 		
 		//Filling the grid with tiles
 		for (int i = 0; i < map.length; i++){

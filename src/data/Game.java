@@ -22,10 +22,10 @@ public class Game {
 	
 	//Following classes are public because they need to be referenced
 	//by just about every other class
-	public Game(int[][]	map){
+	public Game(int[][] map){
 		grid = new TileGrid(map);
 		waveManager = new WaveManager(new Enemy(QuickLoad("Meep"),
-				grid.getTile(4, 5), grid, 64, 64, 70), 2, 5);
+				grid.getTile(1, 5), grid, 64, 64, 70), 2, 5);
 		player = new Player(grid, waveManager);
 	
 	}

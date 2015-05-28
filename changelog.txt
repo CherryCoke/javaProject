@@ -2,6 +2,44 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
+			Version 0.6.1                    
+			 May 28 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Edited MainMenu.java
+	- Added text to "Play," "Editor," and "Quit" buttons
+		- Buttons are all now functional
+	
+- Edited UI.java
+	- Added methods for determining which button was clicked
+
+- Edited StateManager.java
+	- Added ability to switch between states/scenes/parts
+		of the game
+	- Can now start the game and editor from the Main Menu
+
+- Edited Player.java
+	- Relocated setTile method to Editor.java
+	- Relocated ChangeIndex method to Editor.java
+	
+- Edited Editor.java
+	- Handles all code related to changing tiles from within
+		the game/once it has started
+
+- Levels.java created
+	- Holds functions related both saving and loading custom
+		maps created using the editor
+	
+- Edited Boot.java
+	- Removed the map (now controlled by Editor.java)
+
+- Version 0.6.1 committed to Github
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
 			Version 0.6.0                    
 			 May 27 2015
 ___  ______  ______  ______  ______  ______  ______  ______
