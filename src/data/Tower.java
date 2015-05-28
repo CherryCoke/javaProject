@@ -10,13 +10,16 @@ import org.newdawn.slick.opengl.Texture;
 public class Tower {
 	
 	//Setting class varaibles
-	private float x, y, timeSinceLastShot, firingSpeed; //For setting tower
+	private float x, y, timeSinceLastShot, firingSpeed, angle; //For setting tower
 	private int width, height, damage;
 	private Texture texture;
 	private Tile startTile;
 	private ArrayList<Bullet> bullets;
+	private ArrayList<Enemy> enemies;
+	private Enemy target; //Find a specific enemy
 	
-	public Tower(Texture texture, Tile startTile, int damage){
+	public Tower(Texture texture, Tile startTile, int damage, 
+			ArrayList<Enemy> enemies){
 		//Initializing Class Variables
 		this.texture = texture;
 		this.startTile = startTile;
@@ -27,17 +30,32 @@ public class Tower {
 		this.damage = damage;
 		
 		//Setting default values
-		this.firingSpeed = 30;
+		this.firingSpeed = 3;
 		this.timeSinceLastShot = 0;
 		this.bullets = new ArrayList<Bullet>();
+		
+		this.enemies = enemies;
+		
+		//Get the target, and the angle they are at from the tower
+		this.target = acquireTarget();
+		this.angle = calculateAngle();
 	}
 	
+	private Enemy acquireTarget() {
+		return enemies.get(0); //Target the "first" enemy/the oldest spawning
+	}
+	
+	private float calculateAngle(){
+		double angleTemp = Math.atan2(target.getY() - y, target.getX() - x);
+		return (float) Math.toDegrees(angleTemp) - 90; //90 is necessary
+	}
+		
 	private void shoot(){
 		//Reset counter
 		timeSinceLastShot = 0;
 		
-		bullets.add(new Bullet(QuickLoad("bullet"), x + 32, y + 32, 
-				5, 10)); //5 speed, 10 damage (arbitrary at the moment)
+		bullets.add(new Bullet(QuickLoad("bullet"), target,  x + 32, y + 32, 
+				450, 10)); //450 speed, 10 damage (arbitrary at the moment)
 		
 	}
 	
@@ -53,13 +71,17 @@ public class Tower {
 		for (Bullet b: bullets)
 			b.update(); //Update/move them
 		
+		//Continue tracking the enemy's angle
+		angle = calculateAngle();
+		
 		draw(); //and draw them
+		
 	}
 	
 	//Same as Enemy's draw method
 	public void draw(){
 		DrawQuadTex(texture, x, y, width, height);
-		DrawQuadTexRot(texture, x, y, width, height, 45);
+		DrawQuadTexRot(texture, x, y, width, height, angle);
 	}
 
 }

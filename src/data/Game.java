@@ -15,16 +15,15 @@ public class Game {
 	private WaveManager waveManager;
 	
 	//Temp class variables for testing features
-	Tower tower;
+	
 	
 	//Following classes are public because they need to be referenced
 	//by just about every other class
-	public Game(int[][]	 map){
+	public Game(int[][]	map){
 		grid = new TileGrid(map);
-		player = new Player(grid);
 		waveManager = new WaveManager(new Enemy(QuickLoad("Meep"),
-				grid.getTile(4, 5), grid, 64, 64, 50), 4, 5);
-		tower = new Tower(QuickLoad("tower_base"), grid.getTile(14, 7), 10);
+				grid.getTile(4, 5), grid, 64, 64, 70), 2, 5);
+		player = new Player(grid, waveManager);
 	
 	}
 	
@@ -35,6 +34,6 @@ public class Game {
 		player.Update();
 		
 		//Update temp variables
-		tower.update();
+		
 	}
 }

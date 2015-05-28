@@ -2,6 +2,48 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
+			Version 0.5.2                    
+			 May 27 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- Edited WaveManager.java
+	- Added ability to switch/increase current wave
+	
+- Edited Wave.java
+	- Added support to keep track of individual waves
+	- Added conditions for determining current wave
+	
+- Edited Game.java
+	- Removed tower that was being automatically drawn to
+		the screen
+		
+- Edited Tower.java 
+	- Towers can now rotate and "track" enemies
+	
+- Edited Bullet.java
+	- Bullets now move in the direction of enemies
+		- Nothing happens upon contact	
+		
+- Edited Player.java
+	- Gave the player control over the placing/creation of
+		towers
+	- Gave the player control over the game speed/clock
+		
+- Edited WaveManager.java
+	- Created getters and setters
+
+- Edited Clock.java
+	- Allowed multiplier to be edited to change the game
+		speed/debug
+
+- Version 0.5.3 committed to Github
+
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
 			Version 0.5.1                    
 			 May 26 2015
 ___  ______  ______  ______  ______  ______  ______  ______

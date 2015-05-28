@@ -14,7 +14,8 @@ public class WaveManager {
 	private Wave currentWave;
 	
 	
-	public WaveManager(Enemy enemyType, float timeBetweenEnemies, int enemiesPerWave) {
+	public WaveManager(Enemy enemyType, float timeBetweenEnemies, 
+				int enemiesPerWave) {
 			
 			//Initializing class variables
 			this.enemyType = enemyType;
@@ -30,11 +31,23 @@ public class WaveManager {
 	}
 	
 	public void update(){
-		if (currentWave != null)
+		//If wave is not done, continue to update
+		if (!currentWave.isCompleted()){ //! is not
 			currentWave.Update();
+		}
+		
+		else 
+			newWave();
 	}
 	
 	private void newWave(){
+		
 		currentWave = new Wave(enemyType, timeBetweenEnemies, enemiesPerWave);
+		waveNumber++; //Add one to the current wave
+		System.out.println("Beginning Wave " + waveNumber);//Give current wave
+	}
+	
+	public Wave getCurrentWave() {
+		return currentWave;
 	}
 }

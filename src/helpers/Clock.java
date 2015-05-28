@@ -65,7 +65,7 @@ public class Clock {
 	}
 	
 	//Used to change multiplier from other classes
-	public static void ChangeMultiplier(int change){
+	public static void ChangeMultiplier(float change){
 		// || stands for NOT
 		if (multiplier + change < -1 || multiplier + change > 7){
 			
