@@ -1,6 +1,7 @@
 package data;
 
 import org.newdawn.slick.opengl.Texture;
+
 import static helpers.Art.*;
 import static helpers.Clock.*;
 
@@ -51,8 +52,10 @@ public class Bullet {
 		 float totalAllowedMovement = 1.0f;
 		 
 		 //Math.abs(olute value)
-		 float xDistanceFromTarget = Math.abs(target.getX() - x); 
-		 float yDistanceFromTarget = Math.abs(target.getY() - y);
+		 float xDistanceFromTarget = Math.abs(target.getX() 
+				 - x - Game.TILE_SIZE / 4 + Game.TILE_SIZE / 2); 
+		 float yDistanceFromTarget = Math.abs(target.getY() 
+				 - y - Game.TILE_SIZE / 4 + Game.TILE_SIZE / 2);
 		 float totalDistanceFromTarget = xDistanceFromTarget 
 				 + yDistanceFromTarget;
 		 

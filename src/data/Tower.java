@@ -54,7 +54,9 @@ public class Tower {
 		//Reset counter
 		timeSinceLastShot = 0;
 		
-		bullets.add(new Bullet(QuickLoad("bullet"), target,  x + 32, y + 32, 
+		bullets.add(new Bullet(QuickLoad("bullet"), target,  
+				x + Game.TILE_SIZE / 2 - Game.TILE_SIZE / 4, 
+				y + Game.TILE_SIZE / 2 - Game.TILE_SIZE / 4, 
 				450, 10)); //450 speed, 10 damage (arbitrary at the moment)
 		
 	}

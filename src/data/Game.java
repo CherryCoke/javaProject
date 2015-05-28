@@ -14,6 +14,9 @@ public class Game {
 	private Player player;
 	private WaveManager waveManager;
 	
+	//final means it can never be changed
+	public static final int TILE_SIZE = 64;
+	
 	//Temp class variables for testing features
 	
 	
