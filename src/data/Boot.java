@@ -8,8 +8,10 @@ package data;
 
 
 import helpers.Clock;
+import helpers.StateManager;
 
 import org.lwjgl.opengl.Display;
+
 
 
 //* is a wildcard, so it imports everything
@@ -43,7 +45,7 @@ public class Boot {
 		};
 		
 		//Initialize the game class
-		Game game = new Game(map);
+		//Game game = new Game(map);
 		
 		/*
 		Loop to keep the window open
@@ -55,7 +57,9 @@ public class Boot {
 			Clock.update();
 			
 			//update the game
-			game.update();
+			//game.update();
+			
+			StateManager.update();
 			
 			//Everytime the loop finishes update the screen
 			Display.update();

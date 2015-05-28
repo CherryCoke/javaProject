@@ -2,7 +2,39 @@ ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
 (______)(______)(______)(______)(______)(______)(______)
 				
-			Version 0.5.3                    
+			Version 0.6.0                    
+			 May 27 2015
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+
+- StateManager.java created
+	- Handles the different "states" of the game 
+		- Such as "playing," "main menu," or "editor"
+		
+- MainMenu.java created
+	- Used to draw/handle actions on the Main Menu
+	- Buttons drawn onto the screen
+
+- UI package created
+	- That way the UI doesn't have to be static for each
+		different part of the game 
+
+- UI.java created
+	- Used to actually draw UI elements
+
+- Button.java created
+	- Holds the "data" or "blueprints" for buttons
+	
+- Button.png resource added
+
+- Version 0.6.0 committed to Github
+	
+___  ______  ______  ______  ______  ______  ______  ______
+ __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
+(______)(______)(______)(______)(______)(______)(______)
+				
+			Version 0.5.4                    
 			 May 27 2015
 ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
@@ -19,7 +51,6 @@ ___  ______  ______  ______  ______  ______  ______  ______
 	- Created a few variables; removed magic numbers
 	
 - Version 0.5.4 committed to Github		
-
 
 ___  ______  ______  ______  ______  ______  ______  ______
  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  
